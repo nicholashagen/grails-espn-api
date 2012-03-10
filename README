@@ -1,0 +1,8 @@
+Grails Plugin for the ESPN API.
+
+This plugin allows direct access to the ESPN API in order to quickly and
+efficiently build sports-based products.  The plugin supports the following
+ESPN APIs.
+
+Headlines & News
+
