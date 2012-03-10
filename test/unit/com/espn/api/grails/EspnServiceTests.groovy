@@ -11,12 +11,18 @@ import org.junit.*
 @TestFor(EspnService)
 class EspnServiceTests {
 
+	final String API_KEY = ''
+	
 	void testGetTopHeadlines() {
+		if (!checkApiKey()) { return; }
+		
 		EspnService espnService = createService()
 		assertNotNull(espnService.getTopHeadlines());
     }
 	
 	void testGetTopHeadlinesFuture() {
+		if (!checkApiKey()) { return; }
+		
 		def result = null
 		EspnService espnService = createService()
 		def future = espnService.getTopHeadlines { headlines ->
@@ -29,10 +35,19 @@ class EspnServiceTests {
 	}
 	
 	private EspnService createService() {
-		System.setProperty('com.espn.api.key', 'z39utam25jmrejpfbnkqpks5')
+		System.setProperty('com.espn.api.key', API_KEY)
 		EspnService espnService = new EspnService()
 		espnService.afterPropertiesSet()
 		
 		return espnService
+	}
+	
+	private boolean checkApiKey() {
+		if (!API_KEY) {
+			println 'WARNING: no API key defined....skipping tests'
+			return false
+		}
+		
+		return true
 	}
 }
