@@ -27,7 +27,7 @@ core APIs provided by ESPN.
     def license = "APACHE"
 
     // Online location of the plugin's browseable source code.
-//    def scm = [ url: "http://svn.grails-plugins.codehaus.org/browse/grails-plugins/" ]
+    def scm = [ url: "git://github.com/nicholashagen/grails-espn-api.git" ]
 
     def doWithWebDescriptor = { xml ->
         // nothing to do
