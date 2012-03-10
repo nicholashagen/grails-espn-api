@@ -29,7 +29,6 @@ class EspnServiceTests {
 	}
 	
 	private EspnService createService() {
-		System.setProperty('com.espn.api.key', 'z39utam25jmrejpfbnkqpks5')
 		EspnService espnService = new EspnService()
 		espnService.afterPropertiesSet()
 		
